@@ -6,7 +6,6 @@ const eachRoll = document.querySelector("#each-roll");
 
 let dieRolls = [];
 
-
 Roll.addEventListener ("click",function(){
     let numberOfDiceRolls = Number(NumberDice.value);
     var i = 0;
@@ -31,7 +30,10 @@ Roll.addEventListener ("click",function(){
 })
 
 ShowAllRolls.addEventListener("click", function(){
-    eachRoll.innerHTML = dieRolls;
+for (let i = 0; i<dieRolls.length; i+= 1){
+    const newDiceString = '<li class="dice">' + dieRolls[i] + "</li>";
+    eachRoll.innerHTML  += newDiceString;
+}
 })
 
 
